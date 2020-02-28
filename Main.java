@@ -1771,8 +1771,7 @@ public class Main {
                 "experience.  Including this one, there are FIVE total endings.  If you enjoyed this game, " +
                 "consider playing again to see more of what it has to offer (Can you reach all the endings?) and " +
                 "consider supporting the work that was adapted: 'Choose Your Own Adventure: House of Danger' A " +
-                "Cooperative Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.  All feedback is " +
-                "welcome at the House of Danger REDUX blog (located at: ) ");
+                "Cooperative Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.");
     }
 
     private static void gameOver() { //original text below
@@ -1782,8 +1781,7 @@ public class Main {
                 "Keep in mind that there are many different paths, variations, and alternate endings.  You didn't make " +
                 "it into the house this time, but if you enjoyed this game, maybe give it another try?  And consider " +
                 "supporting the work that was adapted: 'Choose Your Own Adventure: House of Danger' A Cooperative " +
-                "Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.  All feedback is welcome on the " +
-                "House of Danger REDUX blog entry (located at: )");
+                "Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.");
     }
 
     private static int dieRoll() {
