@@ -23,20 +23,12 @@ public class Stat {
         }
     }
 
-    public int getDangerLevel() { // <-- This stumped me for a WHILE.  First, I kept trying to directly call the "danger" object outside of the main method.  Next, I tried using danger.getValue() WITHIN a new method.  Finally, it all came together.  And it was beautiful.
-        if (this.value < 3) {
+    public int getDangerLevel() { // <-- Getter methods stumped me for a WHILE.  First, I kept trying to directly call the "danger" object outside of the main method.  Next, I tried using danger.getValue() WITHIN a new method.  Finally, it all came together.  And it was beautiful.
+        if (this.value < 4) {
             return 3;
-        } else if (this.value < 6) {
+        } else if (this.value < 7) {
             return 4;
-        } else if (this.value < 9) {
-            return 5;
-        } else if (this.value == 9){
-            return 6;
-        } else if (this.value == 10 ) {
-            return 3;
-        } else if (this.value < 14) {
-            return 4;
-        } else if (this.value < 17) {
+        } else if (this.value < 10) {
             return 5;
         } else {
             return 6;
