@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int mover = 100;
         Stat psychic = new Stat(3);
         Stat danger = new Stat(1);
         Item pocketknife = new Item("Pocketknife");
@@ -35,308 +34,402 @@ public class Main {
         Switch challenge2700 = new Switch(true);
 
         introduction();
+        
+        int mover = 100;
 
-        while (true) {
-            if (mover == 100) { mover = card100(); pocketknife.obtainItem(); }
+        while (mover != 0) {
+            switch (mover) {
+                case 100:
+                    mover = card100();
+                    pocketknife.obtainItem();
+                    break;
 
-            if (mover == 200) { mover = card200(); }
+                case 200:
+                    mover = card200();
+                    break;
 
-            if (mover == 300) { card300(); gameOver(); break; }
+                case 300:
+                    mover = card300();
+                    gameOver();
+                    break;
 
-            if (mover == 400) { mover = card400(); }
+                case 400:
+                    mover = card400();
+                    break;
 
-            if (mover == 401) { mover = card401(); }
+                case 401:
+                    mover = card401();
+                    break;
 
-            if (mover == 402) { // statue switch challenge
-                int baseRoll402 = dieRoll();
-                int modRoll402 = baseRoll402 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
-                challenge402.closeSwitch();
+                case 402:
+                    int baseRoll402 = dieRoll();
+                    int modRoll402 = baseRoll402 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
+                    challenge402.closeSwitch();
 
-                if (modRoll402 >= danger.getDangerLevel() && baseRoll402 != 1) {
-                    statueSwitch.openSwitch();
-                    mover = card402A(challenge403.getSwitchValue()); // succeed
-                } else {
-                    danger.increaseDanger(1);
+                    if (modRoll402 >= danger.getDangerLevel() && baseRoll402 != 1) {
+                        statueSwitch.openSwitch();
+                        mover = card402A(challenge403.getSwitchValue()); // succeed
+                    } else {
+                        danger.increaseDanger(1);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        mover = card402B(challenge403.getSwitchValue()); // fail
+                    }
+                    break;
+
+                case 403:
+                    int roll403 = dieRoll();
+                    challenge403.closeSwitch();
+
+                    if (roll403 >= danger.getDangerLevel() && roll403 != 1) {
+                        sabre.obtainItem();
+                        psychic.increasePsychic(2);
+                        mover = card403A(challenge402.getSwitchValue()); // succeed
+                    } else {
+                        danger.increaseDanger(2);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        mover = card403B(challenge402.getSwitchValue()); // fail
+                    }
+                    break;
+
+                case 404:
+                    mover = card404(statueSwitch.getSwitchValue());
+                    break;
+
+                case 500:
+                    mover = card500();
+                    break;
+
+                case 501:
+                    mover = card501();
+                    break;
+
+                case 502:
+                    int baseRoll502 = dieRoll();
+                    int modRoll502 = baseRoll502 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
+                    challenge502.closeSwitch();
+
+                    if (modRoll502 >= danger.getDangerLevel() && baseRoll502 != 1) {
+                        largeWoodenDowel.obtainItem();
+                        mover = card502A(challenge503.getSwitchValue()); // succeed
+                    } else {
+                        danger.increaseDanger(1);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        mover = card502B(challenge503.getSwitchValue()); // fail
+                    }
+                    break;
+
+                case 503:
+                    int baseRoll503 = dieRoll();
+                    int modRoll503 = baseRoll503 + strengthModifier(largeWoodenDowel.itemCheck(), shears.itemCheck());
+                    challenge503.closeSwitch();
+
+                    if (modRoll503 >= danger.getDangerLevel() && baseRoll503 != 1) {
+                        lidSwitch.openSwitch();
+                        mover = card503A(challenge502.getSwitchValue()); // succeed
+                    } else {
+                        danger.increaseDanger(2);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        mover = card503B(challenge502.getSwitchValue()); // fail
+                    }
+                    break;
+
+                case 504:
+                    mover = card504(lidSwitch.getSwitchValue());
+                    break;
+
+                case 50024:
+                    mover = card50024();
+                    break;
+
+                case 600:
+                    mover = card600();
+                    break;
+
+                case 700:
+                    mover = card700();
+                    break;
+
+                case 701:
+                    int baseRoll701 = dieRoll();
+                    int modRoll701 = baseRoll701 + fightingModifier(sabre.itemCheck(), pocketknife.itemCheck());
+
+                    if (modRoll701 >= danger.getDangerLevel() && baseRoll701 != 1) {  // <-- This stumped me for a WHILE.  First, I kept trying to directly call the "danger" object outside of the main method.  Next, I tried using danger.getValue() WITHIN a new method.  Finally, it all came together.  And it was beautiful.
+                        mover = card701A();
+                        binoculars.obtainItem();
+                    } else {
+                        mover = card701B();
+                        danger.increaseDanger(2);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                    }
+                    break;
+
+                case 702:
+                    mover = card702();
+                    break;
+
+                case 800:
+                    mover = card800();
+                    break;
+
+                case 900:
+                    mover = card900(psychic.getPsychicLevel());
+                    break;
+
+                case 1000:
+                    mover = card1000();
+                    break;
+
+                case 1001:
+                    int roll1001 = dieRoll();
+                    if (roll1001 >= danger.getDangerLevel()) {
+                        mover = card1001A();
+                        satelliteDish.obtainItem();
+                        psychic.decreaseStat(1);
+                    } else {
+                        mover = card1001B();
+                        danger.increaseDanger(2);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                    }
+                    break;
+
+                case 1100:
+                    mover = card1100();
+                    break;
+
+                case 1200:
+                    mover = card1200(hedgeMazeMap.itemCheck());
+                    break;
+
+                case 120001:
+                    danger.increaseDanger(2);
                     psychic.psyPenaltyCheck(danger.getValue());
                     danger.dangerLimit();
-                    mover = card402B(challenge403.getSwitchValue()); // fail
-                }
-            }
+                    mover = card120001();
+                    break;
 
-            if (mover == 403) { // statue sword challenge
-                int roll403 = dieRoll();
-                challenge403.closeSwitch();
+                case 120009:
+                    mover = card120009();
+                    break;
 
-                if (roll403 >= danger.getDangerLevel() && roll403 != 1) {
-                    sabre.obtainItem();
+                case 120011:
+                    danger.increaseDanger(2);
+                    psychic.psyPenaltyCheck(danger.getValue());
+                    danger.dangerLimit();
+                    mover = card120011();
+                    break;
+
+                case 120012:
+                    mover = card120012();
+                    break;
+
+                case 120013:
+                    mover = card120013();
+                    break;
+
+                case 120014:
+                    danger.increaseDanger(2);
+                    psychic.psyPenaltyCheck(danger.getValue());
+                    danger.dangerLimit();
+                    mover = card120014();
+                    break;
+
+                case 1300:
+                    mover = card1300();
+                    break;
+
+                case 1400:
+                    mover = card1400(cigarbox.getSwitchValue());
+                    break;
+
+                case 1401:
+                    mover = card1401();
+                    flashlight.obtainItem();
+                    cigarbox.closeSwitch();
+                    break;
+
+                case 1402:
+                    mover = card1402();
+                    break;
+
+                case 1500:
+                    mover = card1500(shearsInBush.getSwitchValue());
+                    break;
+
+                case 1501:
+                    mover = card1501();
+                    shears.obtainItem();
+                    shearsInBush.closeSwitch();
+                    break;
+
+                case 1502:
+                    mover = card1502();
+                    break;
+
+                case 1600:
+                    mover = card1600();
+                    gameOver();
+                    break;
+
+                case 1700:
+                    mover = card1700();
+                    break;
+
+                case 1800:
+                    mover = card1800(lockbox.getSwitchValue());
+                    break;
+
+                case 1801:
+                    mover = card1801();
+                    truckKey.obtainItem();
+                    lockbox.closeSwitch();
                     psychic.increasePsychic(2);
-                    mover = card403A(challenge402.getSwitchValue()); // succeed
-                } else {
+                    break;
+
+                case 1802:
+                    mover = card1802();
+                    break;
+
+                case 1900:
+                    mover = card1900();
+                    break;
+
+                case 2000:
+                    mover = card2000();
+                    break;
+
+                case 2100:
+                    mover = card2100();
+                    break;
+
+                case 2200:
+                    mover = card2200();
+                    break;
+
+                case 220020:
+                    int baseRoll220020 = dieRoll();
+                    int modRoll220020 = baseRoll220020 + fightingModifier(sabre.itemCheck(), pocketknife.itemCheck());
+                    while (modRoll220020 < danger.getDangerLevel() || baseRoll220020 == 1) {
+                        danger.increaseDanger(4);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        baseRoll220020 = dieRoll();
+                        modRoll220020 = baseRoll220020 + fightingModifier(sabre.itemCheck(), pocketknife.itemCheck());
+                    }
+                    danger.decreaseStat(2);
+                    psychic.psyPenaltyCheck(danger.getValue());
+                    danger.dangerLimit();
+                    mover = card220020();
+                    break;
+
+                case 2300:
+                    mover = card2300(challenge2300.getSwitchValue());
+                    break;
+
+                case 2301:
+                    int baseRoll2301 = dieRoll();
+                    int modRoll2301 = baseRoll2301 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
+                    if (modRoll2301 >= danger.getDangerLevel() && baseRoll2301 != 1) {
+                        whirringMetalSphere.obtainItem();
+                        psychic.increasePsychic(3);
+                        challenge2300.closeSwitch();
+                        mover = card2302(); // succeed
+                    } else {
+                        danger.increaseDanger(2);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        mover = card2303(); // fail
+                    }
+                    break;
+
+                case 2304:
+                    mover = card2304();
+                    break;
+
+                case 2400:
+                    mover = card2400();
+                    gameOver();
+                    break;
+
+                case 2500:
+                    mover = card2500();
+                    gameOver();
+                    break;
+
+                case 2600:
+                    mover = card2600(challenge2600.getSwitchValue());
+                    break;
+
+                case 2601:
+                    int baseRoll2601 = dieRoll();
+                    int modRoll2601 = baseRoll2601 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
+                    challenge2600.closeSwitch();
+                    if (modRoll2601 >= danger.getDangerLevel() && baseRoll2601 != 1) {
+                        hedgeMazeMap.obtainItem();
+                        psychic.increasePsychic(1);
+                        mover = card2601A(); // succeed
+                    } else {
+                        danger.increaseDanger(1);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        mover = card2601B(); // fail
+                    }
+                    break;
+
+                case 2602:
+                    mover = card2602();
+                    break;
+
+                case 2700:
+                    mover = card2700(challenge2700.getSwitchValue());
+                    break;
+
+                case 2701:
+                    int roll2701 = dieRoll();
+                    if (roll2701 >= danger.getDangerLevel() && roll2701 != 1) {
+                        danger.decreaseStat(4);
+                        challenge2700.closeSwitch();
+                        mover = card2701A();
+                    } else {
+                        danger.increaseDanger(2);
+                        psychic.psyPenaltyCheck(danger.getValue());
+                        danger.dangerLimit();
+                        mover = card2701B();
+                    }
+                    break;
+
+                case 2702:
+                    mover = card2702();
+                    break;
+
+                case 2800:
+                    mover = card2800();
+                    break;
+
+                case 2900:
+                    mover = card2900();
+                    break;
+
+                case 3000:
+                    mover = card3000();
+                    break;
+
+                case 3001:
                     danger.increaseDanger(2);
                     psychic.psyPenaltyCheck(danger.getValue());
                     danger.dangerLimit();
-                    mover = card403B(challenge402.getSwitchValue()); // fail
-                }
+                    mover = card3001();
+                    break;
+
+                case 3100:
+                    card3100win();
+                    break;
             }
-
-            if (mover == 404) { mover = card404(statueSwitch.getSwitchValue()); }
-
-            if (mover == 500) { mover = card500(); }
-
-            if (mover == 501) { mover = card501(); }
-
-            if (mover == 502) { // sarcophagus search challenge
-                int baseRoll502 = dieRoll();
-                int modRoll502 = baseRoll502 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
-                challenge502.closeSwitch();
-
-                if (modRoll502 >= danger.getDangerLevel() && baseRoll502 != 1) {
-                    largeWoodenDowel.obtainItem();
-                    mover = card502A(challenge503.getSwitchValue()); // succeed
-                } else {
-                    danger.increaseDanger(1);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                    mover = card502B(challenge503.getSwitchValue()); // fail
-                }
-            }
-
-            if (mover == 503) { // sarcophagus lid challenge
-                int baseRoll503 = dieRoll();
-                int modRoll503 = baseRoll503 + strengthModifier(largeWoodenDowel.itemCheck(), shears.itemCheck());
-                challenge503.closeSwitch();
-
-                if (modRoll503 >= danger.getDangerLevel() && baseRoll503 != 1) {
-                    lidSwitch.openSwitch();
-                    mover = card503A(challenge502.getSwitchValue()); // succeed
-                } else {
-                    danger.increaseDanger(2);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                    mover = card503B(challenge502.getSwitchValue()); // fail
-                }
-            }
-
-            if (mover == 504) { mover = card504(lidSwitch.getSwitchValue()); }
-
-            if (mover == 50024) { mover = card50024(); }
-
-            if (mover == 600) { mover = card600(); }
-
-            if (mover == 700) { mover = card700(); }
-
-            if (mover == 701) {
-                int baseRoll701 = dieRoll();
-                int modRoll701 = baseRoll701 + fightingModifier(sabre.itemCheck(), pocketknife.itemCheck());
-
-                if (modRoll701 >= danger.getDangerLevel() && baseRoll701 != 1) {  // <-- This stumped me for a WHILE.  First, I kept trying to directly call the "danger" object outside of the main method.  Next, I tried using danger.getValue() WITHIN a new method.  Finally, it all came together.  And it was beautiful.
-                    mover = card701A();
-                    binoculars.obtainItem();
-                } else {
-                    mover = card701B();
-                    danger.increaseDanger(2);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                }
-            }
-
-            if (mover == 702) { mover = card702(); }
-
-            if (mover == 800) { mover = card800(); }
-
-            if (mover == 900) { mover = card900(psychic.getPsychicLevel()); }
-
-            if (mover == 1000) { mover = card1000(); }
-
-            if (mover == 1001) {
-                int roll1001 = dieRoll();
-
-                if (roll1001 >= danger.getDangerLevel()) {
-                    mover = card1001A();
-                    satelliteDish.obtainItem();
-                    psychic.decreaseStat(1);
-                } else {
-                    mover = card1001B();
-                    danger.increaseDanger(2);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                }
-            }
-
-            if (mover == 1100) { mover = card1100(); }
-
-            if (mover == 1200) { mover = card1200(hedgeMazeMap.itemCheck()); }
-
-            if (mover == 120001) {
-                danger.increaseDanger(2);
-                psychic.psyPenaltyCheck(danger.getValue());
-                danger.dangerLimit();
-                mover = card120001();
-            }
-
-            if (mover == 120009) { mover = card120009(); }
-
-            if (mover == 120011) {
-                danger.increaseDanger(2);
-                psychic.psyPenaltyCheck(danger.getValue());
-                danger.dangerLimit();
-                mover = card120011();
-            }
-
-            if (mover == 120012) { mover = card120012(); }
-
-            if (mover == 120013) { mover = card120013(); }
-
-            if (mover == 120014) {
-                danger.increaseDanger(2);
-                psychic.psyPenaltyCheck(danger.getValue());
-                danger.dangerLimit();
-                mover = card120014();
-            }
-
-            if (mover == 1300) { mover = card1300(); }
-
-            if (mover == 1400) { mover = card1400(cigarbox.getSwitchValue()); }
-
-            if (mover == 1401) {
-                mover = card1401();
-                flashlight.obtainItem();
-                cigarbox.closeSwitch();
-            }
-
-            if (mover == 1402) { mover = card1402(); }
-
-            if (mover == 1500) { mover = card1500(shearsInBush.getSwitchValue()); }
-
-            if (mover == 1501) {
-                mover = card1501();
-                shears.obtainItem();
-                shearsInBush.closeSwitch();
-            }
-
-            if (mover == 1502) { mover = card1502(); }
-
-            if (mover == 1600) { card1600(); gameOver(); break; }
-
-            if (mover == 1700) { mover = card1700(); }
-
-            if (mover == 1800) { mover = card1800(lockbox.getSwitchValue()); }
-
-            if (mover == 1801) {
-                mover = card1801();
-                truckKey.obtainItem();
-                lockbox.closeSwitch();
-                psychic.increasePsychic(2);
-            }
-
-            if (mover == 1802) { mover = card1802(); }
-
-            if (mover == 1900) { mover = card1900(); }
-
-            if (mover == 2000) { mover = card2000(); }
-
-            if (mover == 2100) { mover = card2100(); }
-
-            if (mover == 2200) { mover = card2200(); }
-
-            if (mover == 220020) {
-                int baseRoll220020 = dieRoll();
-                int modRoll220020 = baseRoll220020 + fightingModifier(sabre.itemCheck(), pocketknife.itemCheck());
-
-                while (modRoll220020 < danger.getDangerLevel() || baseRoll220020 == 1) {
-                    danger.increaseDanger(4);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                    baseRoll220020 = dieRoll();
-                    modRoll220020 = baseRoll220020 + fightingModifier(sabre.itemCheck(), pocketknife.itemCheck());
-                }
-
-                danger.decreaseStat(2);
-                psychic.psyPenaltyCheck(danger.getValue());
-                danger.dangerLimit();
-
-                mover = card220020();
-            }
-
-            if (mover == 2300) { mover = card2300(challenge2300.getSwitchValue()); }
-
-            if (mover == 2301) {
-                int baseRoll2301 = dieRoll();
-                int modRoll2301 = baseRoll2301 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
-
-                if (modRoll2301 >= danger.getDangerLevel() && baseRoll2301 != 1) {
-                    whirringMetalSphere.obtainItem();
-                    psychic.increasePsychic(3);
-                    challenge2300.closeSwitch();
-                    mover = card2302(); // succeed
-                } else {
-                    danger.increaseDanger(2);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                    mover = card2303(); // fail
-                }
-            }
-
-            if (mover == 2304) { mover = card2304(); }
-
-            if (mover == 2400) { card2400(); gameOver(); break; }
-
-            if (mover == 2500) { card2500(); gameOver(); break; }
-
-            if (mover == 2600) { mover = card2600(challenge2600.getSwitchValue()); }
-
-            if (mover == 2601) {
-                int baseRoll2601 = dieRoll();
-                int modRoll2601 = baseRoll2601 + perceptionModifier(binoculars.itemCheck(), flashlight.itemCheck());
-                challenge2600.closeSwitch();
-
-                if (modRoll2601 >= danger.getDangerLevel() && baseRoll2601 != 1) {
-                    hedgeMazeMap.obtainItem();
-                    psychic.increasePsychic(1);
-                    mover = card2601A(); // succeed
-                } else {
-                    danger.increaseDanger(1);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                    mover = card2601B(); // fail
-                }
-            }
-
-            if (mover == 2602) { mover = card2602(); }
-
-            if (mover == 2700) { mover = card2700(challenge2700.getSwitchValue());}
-
-            if (mover == 2701) {
-                int roll2701 = dieRoll();
-
-                if (roll2701 >= danger.getDangerLevel() && roll2701 != 1) {
-                    danger.decreaseStat(4);
-                    challenge2700.closeSwitch();
-                    mover = card2701A();
-                } else {
-                    danger.increaseDanger(2);
-                    psychic.psyPenaltyCheck(danger.getValue());
-                    danger.dangerLimit();
-                    mover = card2701B();
-                }
-            }
-
-            if (mover == 2702) { mover = card2702(); }
-
-            if (mover == 2800) { mover = card2800(); }
-
-            if (mover == 2900) { mover = card2900(); }
-
-            if (mover == 3000) { mover = card3000(); }
-
-            if (mover == 3001) {
-                danger.increaseDanger(2);
-                psychic.psyPenaltyCheck(danger.getValue());
-                danger.dangerLimit();
-                mover = card3001();
-            }
-
-            if (mover == 3100) { card3100win(); }
         }
     }
 
