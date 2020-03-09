@@ -1,20 +1,20 @@
 // 17 Feb 2020: project started
 // 28 Feb 2020: Version 1.0 completed and uploaded to https://github.com/sethblackburn
-// 09 Mar 2020: Version 1.1 Update - reformatted the main loop to use a switch instead of a long string of if-statements; 
+// 09 Mar 2020: Version 1.1 Update - reformatted the main loop to use a switch instead of a long string of if-statements;
 //              embedded loop and switch in its own method at the end of the Main class
 
 import java.util.Scanner;
 import java.util.Random;
 
 public class Main {
-    public void main(String[] args) {
+    public static void main(String[] args) {
         introduction();
         mainSwitch();
         conclusion();
     }
 
-    private void introduction() {
-        System.out.println("\n Welcome to House of Danger REDUX - Version 1.0!\n" +
+    private static void introduction() {
+        System.out.println("\n Welcome to House of Danger REDUX - Version 1.1!\n" +
                 "\n" +
                 " LEGAL DISCLAIMER:\n" +
                 "\n" +
@@ -37,7 +37,7 @@ public class Main {
                 "prohibited.  \n");
     }
 
-    private int card100() {
+    private static int card100() {
         Scanner input = new Scanner(System.in);
         System.out.println("     House of Danger\n" +
                 "\n" +
@@ -93,7 +93,7 @@ public class Main {
         }
     }
 
-    private int card200() {
+    private static int card200() {
         Scanner input = new Scanner(System.in);
         System.out.println("     In one heroic move, you jump into the opening of the roof access door and land on your " +
                 "feet inside the greenhouse, ninja-like.  You take a deep breath, ninja-like.  You collect yourself, " +
@@ -121,7 +121,7 @@ public class Main {
         }
     }
 
-    private int card300() {
+    private static int card300() {
         System.out.println("     You make it only a few steps across the open field before you hear a clicking sound " +
                 "from around your feet that freezes you in your tracks.  Looking down, you see freshly disturbed " +
                 "earth around your sneakers, as though someone had recently buried something there.  \n" +
@@ -133,7 +133,7 @@ public class Main {
         return 0;
     }
 
-    private int card400() {
+    private static int card400() {
         Scanner input = new Scanner(System.in);
         System.out.println("     The horseman is a dashing, bearded, Civil War soldier, his bronze face stoic.  He holds out " +
                 "a cavalry sabre toward the brooding sky.  The sword's edge glints in the weak sunlight that " +
@@ -160,7 +160,7 @@ public class Main {
         }
     }
 
-    private int card401() {
+    private static int card401() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("If you search around the monument's base, type \"base\" and press 'Enter'. \n" +
@@ -178,7 +178,7 @@ public class Main {
         }
     }
 
-    private int card402A(boolean challenge403Switch) {
+    private static int card402A(boolean challenge403Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     When you inadvertently press a hidden switch, the statue slides to one side, revealing a " +
                 "cement passage.\n");
@@ -203,7 +203,7 @@ public class Main {
         }
     }
 
-    private int card402B(boolean challenge403Switch) {
+    private static int card402B(boolean challenge403Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You search the base thoroughly, but you don't see anything.  You're getting the " +
                 "sense that it might not be safe to hang around in one place for too long.\n"); // original text
@@ -228,7 +228,7 @@ public class Main {
         }
     }
 
-    private int card403A(boolean challenge402Switch) {
+    private static int card403A(boolean challenge402Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     The sabre comes loose in your hand.  It's heavy and quite sharp.  Your psychic senses tell " +
                 "you this is an important item.\n");
@@ -253,7 +253,7 @@ public class Main {
         }
     }
 
-    private int card403B(boolean challenge402Switch) {
+    private static int card403B(boolean challenge402Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You fall from the statue and twist your ankle when you land.  You can still walk on it, " +
                 "but the distraction of the pain is going to make later challenges more difficult.\n"); // original text
@@ -278,7 +278,7 @@ public class Main {
         }
     }
 
-    private int card404(boolean statueSwitch) {
+    private static int card404(boolean statueSwitch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     Moving on from the statue, you need to decide which area to explore next.\n");
         while (true) {
@@ -303,7 +303,7 @@ public class Main {
         }
     }
 
-    private int card500() {
+    private static int card500() {
         Scanner input = new Scanner(System.in);
         System.out.println("     The mausoleum interior feels musty and cool.  Something is dripping from the ceiling and " +
                 "landing in the corner with a PLINK, which is odd, given that it hasn't started raining yet.  You also " +
@@ -328,7 +328,7 @@ public class Main {
         }
     }
 
-    private int card501() {
+    private static int card501() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("If you search around the sarcophagus, type \"around\" and press 'Enter'. \n" +
@@ -346,7 +346,7 @@ public class Main {
         }
     }
 
-    private int card502A(boolean challenge503Switch) {
+    private static int card502A(boolean challenge503Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You find a large wooden dowel.  This could help you pry open or move heavy things.  Your " +
                 "psychic senses tell you this is an important item.\n");
@@ -371,7 +371,7 @@ public class Main {
         }
     }
 
-    private int card502B(boolean challenge503Switch) {
+    private static int card502B(boolean challenge503Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You don't seem to find anything. Your intuition tells you that staying in one place " +
                 "for too long isn't safe.\n");
@@ -396,7 +396,7 @@ public class Main {
         }
     }
 
-    private int card503A(boolean challenge502Switch) {
+    private static int card503A(boolean challenge502Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     It takes some muscle, but you manage to remove the lid and are surprised to find that not " +
                 "only is there no body, but an opening to a secret passageway offers yet another way out of the " +
@@ -422,7 +422,7 @@ public class Main {
         }
     }
 
-    private int card503B(boolean challenge502Switch) {
+    private static int card503B(boolean challenge502Switch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     The lid is much heavier than you anticipated.  While try to move it, you strain a muscle in " +
                 "your shoulder.  The pain in your shoulder is gonna make later challenges more difficult.\n"); // original text
@@ -447,7 +447,7 @@ public class Main {
         }
     }
 
-    private int card504(boolean lidSwitch) {
+    private static int card504(boolean lidSwitch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     Now ready to leave the mausoleum, where do you go next?\n");
         while (true) {
@@ -472,7 +472,7 @@ public class Main {
         }
     }
 
-    private int card50024() { // story card 5 to clue card 24 to story card 12
+    private static int card50024() { // story card 5 to clue card 24 to story card 12
         System.out.println("     You travel through the tunnel for what feels like forever.  The light disappears, and the " +
                 "tunnel eventually ends.  You feel frightened and trapped.  You want to run back and try the other routes " +
                 "out of the mausoleum.\n" +
@@ -482,7 +482,7 @@ public class Main {
         return 1200;
     }
 
-    private int card600() {
+    private static int card600() {
         Scanner input = new Scanner(System.in);
         System.out.println("     Just as you reach for the doorknob, a fierce gust of wind violently flings open the door.  " +
                 "The windows are all wide open, and the wind continues to rush through the quarters, blowing papers " +
@@ -517,7 +517,7 @@ public class Main {
         }
     }
 
-    private int card700() {
+    private static int card700() {
         Scanner input = new Scanner(System.in);
         System.out.println("     You pull yourself over the rusting gate and land with a CRUNCH on the gravel driveway " +
                 "leading toward the house.  But before you can survey your surroundings, you hear a guttural sound " +
@@ -544,7 +544,7 @@ public class Main {
         }
     }
 
-    private int card701A() {
+    private static int card701A() {
         System.out.println("     It's probably unwise to engage such a savage beast in combat, but Danger is your middle name.  " +
                 "You land a few quick jabs on the creature before it can react, and then you throw it to the ground.  " +
                 "You stand there for a moment, your confidence high.  Then, the creature leaps to its feet and rushes you.  " +
@@ -553,7 +553,7 @@ public class Main {
         return 1900;
     }
 
-    private int card701B() {
+    private static int card701B() {
         System.out.println("     The creature charges you and knocks you onto your back.  As you get to your feet, " +
                 "you see it has retreated and is preparing for a second charge.  Whatever this savage beast is, " +
                 "it's beyond your strength.  You have to make a run for it.\n");
@@ -561,7 +561,7 @@ public class Main {
         return 702;
     }
 
-    private int card702() {
+    private static int card702() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("If you run into the guardhouse, type \"guardhouse\" and press 'Enter'.\n" +
@@ -579,7 +579,7 @@ public class Main {
         }
     }
 
-    private int card800() {
+    private static int card800() {
         Scanner input = new Scanner(System.in);
         System.out.println("     Your heart pounding, you bolt up the driveway, which bends around the back side of the " +
                 "manor.  After running about fifty yards, you slow down, out of breath. Gasping for air, you stop at a " +
@@ -604,7 +604,7 @@ public class Main {
         }
     }
 
-    private int card900(int psychicLevel) {
+    private static int card900(int psychicLevel) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You spring to the gazebo, practically pushed along by the winds that are picking up.  " +
                 "A light sprinkling of rain spatters the ground as you run.\n" +
@@ -636,7 +636,7 @@ public class Main {
         }
     }
 
-    private int card1000() {
+    private static int card1000() {
         System.out.println("     You stand on the gazebo's railing, steadying yourself by gripping an ornate post " +
                 "holding up the roof.  The rumbling above sounds and feels frightening--what are you getting yourself " +
                 "into? \n" +
@@ -648,7 +648,7 @@ public class Main {
         return 1001;
     }
 
-    private int card1001A() { // story card 10 clue card 22 clue card 7
+    private static int card1001A() { // story card 10 clue card 22 clue card 7
         System.out.println("You hold on to the top of the gazebo with one hand and time your lunge perfectly--you snag " +
                 "a chunk of the whirling satellite dish.\n" +
                 "     The piece appears to be made by hand.  An engraving on it reads PLANET OF CRYSTALS.\n" +
@@ -657,7 +657,7 @@ public class Main {
         return 3000;
     }
 
-    private int card1001B() { // story card 10 clue card 17
+    private static int card1001B() { // story card 10 clue card 17
         System.out.println("     Your fingertips graze a piece of the satellite dish, but you can't quite grab it.  " +
                 "You reach too far, lose your balance, and tumble from the gazebo and down a short hill.\n" +
                 "     Your confusion from the fall slowly subsides, and you hear the sound of a beautiful violin " +
@@ -665,7 +665,7 @@ public class Main {
         return 1700;
     }
 
-    private int card1100() {
+    private static int card1100() {
         Scanner input = new Scanner(System.in);
         System.out.println("     You can tell that the pool house was once quite luxurious.  It contains half a dozen " +
                 "private rooms and showers, as well as an ornate mahogany bar in the common area.  It must have been " +
@@ -688,7 +688,7 @@ public class Main {
         }
     }
 
-    private int card1200(boolean map) {
+    private static int card1200(boolean map) {
         Scanner input = new Scanner(System.in);
         if (map) {
             System.out.println("     The hedge maze is massive.  It's thick hedge walls are twice as tall as you but " +
@@ -714,13 +714,13 @@ public class Main {
         }
     }
 
-    private int card120001() {
+    private static int card120001() {
         System.out.println("     You turn and follow a path for several minutes.  Wait . . . this looks familiar . . ." +
                 "You feel a bit lost and disoriented for a while, but you manage to get back on track.\n"); //contains original text
         return 120011; // story card 12 clue card 11
     }
 
-    private int card120009() {
+    private static int card120009() {
         Scanner input = new Scanner(System.in);
         System.out.println("     You turn and follow a path deeper into the maze.  You feel like you're going in the " +
                 "right direction. \n");
@@ -739,13 +739,13 @@ public class Main {
         }
     }
 
-    private int card120011() {
+    private static int card120011() {
         System.out.println("You keep going.  And going.  It seems like you've just walked in a circle!  Minutes stretch " +
                 "to upwards of an hour before you get your bearings and get back on track.  \n"); // contains original text
         return 120012;
     }
 
-    private int card120012() {
+    private static int card120012() {
         Scanner input = new Scanner(System.in);
         System.out.println("You feel like you might be getting close to the end of the maze!");
         while (true) {
@@ -763,19 +763,19 @@ public class Main {
         }
     }
 
-    private int card120013() {
+    private static int card120013() {
         System.out.println("     Finally you see it . . . The end of the maze!");
         return 1800;
     }
 
-    private int card120014() {
+    private static int card120014() {
         System.out.println("You suddenly feel very lost.  You'd think you'd be better at this by now . . .  The sense of danger " +
                 "and the dampening of your psychic senses press down on you as you feel stir-crazy for being in here " +
                 "for so long.\n"); // contains original text
         return 1800;
     }
 
-    private int card1300() {
+    private static int card1300() {
         Scanner input = new Scanner(System.in);
         System.out.println("     Moving along the mossy stone wall that surrounds the property, you come across a " +
                 "jagged opening created by fallen rocks--it's just big enough for you to squeeze through.  Once " +
@@ -801,7 +801,7 @@ public class Main {
         }
     }
 
-    private int card1400(boolean box) {
+    private static int card1400(boolean box) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You climb down the gnarled vine into a walled courtyard beside an outbuilding that appears " +
                 "to be the servants' quarters.  The door is slightly ajar, but you are unsure if anyone is inside.  ");
@@ -832,12 +832,12 @@ public class Main {
         }
     }
 
-    private int card1401() {
+    private static int card1401() {
         System.out.println("     The cigar box contains a flashlight.  You keep this item.  It's now time to move on. ");
         return 1402;
     }
 
-    private int card1402() {
+    private static int card1402() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you approach the door to the servants' quarters, type \"door\" and press 'Enter'. \n" +
@@ -855,7 +855,7 @@ public class Main {
         }
     }
 
-    private int card1500(boolean shears) {
+    private static int card1500(boolean shears) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You emerge into the clearing.  Manicured bushes in the shapes of fish, swans, and rabbits " +
                 "perch atop a well-kept lawn.  ");
@@ -889,13 +889,13 @@ public class Main {
         }
     }
 
-    private int card1501() {
+    private static int card1501() {
         System.out.println("     You pull a pair of garden shears from the shrub.  They could help you pry " +
                 "something open.  You keep this item.  It's now time to move on. ");
         return 1502;
     }
 
-    private int card1502() {
+    private static int card1502() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you walk through the wooden gate, type \"gate\" and press 'Enter'. \n" +
@@ -913,7 +913,7 @@ public class Main {
         }
     }
 
-    private int card1600() {
+    private static int card1600() {
         System.out.println("     Without warning, the earthen walls begin to collapse around you, and before you can " +
                 "react, you are up to your waist in dirt.  You write and twist, trying to escape, but it only causes " +
                 "more soil to cascade down.  Soon it's up to your shoulders, then your neck, then your cheeks.  You " +
@@ -924,7 +924,7 @@ public class Main {
         return 0;
     }
 
-    private int card1700() {
+    private static int card1700() {
         Scanner input = new Scanner(System.in);
         System.out.println("     You move further toward the hypnotic sound of the distant violin, which is oddly " +
                 "calming and uplifting even as the winds increase around you.\n" +
@@ -949,7 +949,7 @@ public class Main {
         }
     }
 
-    private int card1800(boolean lockbox) {
+    private static int card1800(boolean lockbox) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You finally come to the end of the hedge maze.  It exits toward a pool house.  ");
 
@@ -982,13 +982,13 @@ public class Main {
         }
     }
 
-    private int card1801() {
+    private static int card1801() {
         System.out.println("     Not only is the lockbox open, but inside you find a key to a truck.  Your psychic " +
                 "senses tell you this is an important item.");
         return 1802;
     }
 
-    private int card1802() {
+    private static int card1802() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you explore the pool house, type \"house\" and press 'Enter'.  " +
@@ -1006,7 +1006,7 @@ public class Main {
         }
     }
 
-    private int card1900() { // challenge and battery item omitted
+    private static int card1900() { // challenge and battery item omitted
         Scanner input = new Scanner(System.in);
         System.out.println("     You were lucky to escape the creature, but you know it's still out there . . . somewhere.  " +
                 "You run into the old guardhouse, which is a small room with several TV monitors flashing black-and-white " +
@@ -1039,7 +1039,7 @@ public class Main {
         }
     }
 
-    private int card2000() {
+    private static int card2000() {
         Scanner input = new Scanner(System.in);
         System.out.println("     Running along the side of the house, you discover that it is a tight squeeze between " +
                 "the house and the fence.  You almost have to shuffle sideways to make it through, which makes you " +
@@ -1065,7 +1065,7 @@ public class Main {
         }
     }
 
-    private int card2100() {
+    private static int card2100() {
         Scanner input = new Scanner(System.in);
         System.out.println("     Passing between a pair of stone angels, you enter an old family cemetary.  There is a " +
                 "marble mausoleum in the center of the cemetary.  A short set of stairs leads into its shadowy " +
@@ -1089,7 +1089,7 @@ public class Main {
         }
     }
 
-    private int card2200() {
+    private static int card2200() {
         System.out.println("     Mustering all the courage you can, you dive into the watery tunnel.  There is just " +
                 "enough room in the tunnel above the water for you to lift your head between strokes and take a breath.\n" +
                 "     Eventually, the tunnel drops lower and lower until it's completely submerged under water.  You " +
@@ -1103,7 +1103,7 @@ public class Main {
         return 2201;
     }
 
-    private int card220020() { // story card 22 clue card 20
+    private static int card220020() { // story card 22 clue card 20
         System.out.println("     The thing--whatever it is--wraps more tightly around your leg.  It's pulling your down!  " +
                 "Another tendril (or tentacle?) slides around your neck.  You pry it off, and with the last of your " +
                 "strength, you give a powerful kick, and you're free.  Just like that, the thing is gone.  You emerge " +
@@ -1111,7 +1111,7 @@ public class Main {
         return 2300;
     }
 
-    private int card2300(boolean challengeSwitch) {
+    private static int card2300(boolean challengeSwitch) {
         Scanner input = new Scanner(System.in);
         System.out.println("     It's obvious that nobody has cleaned the pool in ages.  The water is a murky green, and " +
                 "the surface is littered with leaves and branches.  Ripples pulse outward from the center of the pool.\n" +
@@ -1139,7 +1139,7 @@ public class Main {
         }
     }
 
-    private int card2302() { // story card 23 clue card 8 and 21
+    private static int card2302() { // story card 23 clue card 8 and 21
         System.out.println("     You walk down the steps into the water and see what's making the waves:  a strange, " +
                 "whirring metal sphere, slightly bigger than a softball.  You impulsively grab it.\n" +
                 "     The sphere vibrates in your hand.  There are two buttons on it.  You press one.  Nothing happens.  " +
@@ -1149,7 +1149,7 @@ public class Main {
         return 2304;
     }
 
-    private int card2303() {
+    private static int card2303() {
         Scanner input = new Scanner(System.in);
         System.out.println("     While moving through the water you lose your equilibrium and your head goes under " +
                 "unexpectedly.  You inhale a small amount of water, prompting a fierce, painful coughing fit and a " +
@@ -1171,7 +1171,7 @@ public class Main {
         }
     }
 
-    private int card2304() {
+    private static int card2304() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you go to the pool house, type \"house\" and press 'Enter'. \n" +
@@ -1189,7 +1189,7 @@ public class Main {
         }
     }
 
-    private int card2400() {
+    private static int card2400() {
         System.out.println("   You tiptoe through the open gate, eager to hear the finale of the chimp's violin piece.  " +
                 "Quietly . . . quietly . . .\n" +
                 "     With your third step, you trigger a motion-sensor light that completely illuminates the interior " +
@@ -1201,7 +1201,7 @@ public class Main {
         return 0;
     }
 
-    private int card2500() {
+    private static int card2500() {
         System.out.println("     As soon as you take a step toward the vines, one of them lashes out and wraps around " +
                 "your neck.  Then another whips around your waist.  More and more vines spring out at you.\n" +
                 "     'This isn't really happening,' you think.\n" +
@@ -1212,7 +1212,7 @@ public class Main {
         return 0;
     }
 
-    private int card2600(boolean paper) {
+    private static int card2600(boolean paper) {
         Scanner input = new Scanner(System.in);
         System.out.println("    You land in a ditch, splashing into shallow, frigid water.  At this point, you notice a " +
                 "large estate ahead of you, which partially blocks the entrance to a dark, cement culvert that the " +
@@ -1242,19 +1242,19 @@ public class Main {
         }
     }
 
-    private int card2601A() {
+    private static int card2601A() {
         System.out.println("     The paper looks like a map to the hedge maze.  Your psychic senses tell you this is " +
                 "an important item.");
         return 2602;
     }
 
-    private int card2601B() {
+    private static int card2601B() {
         System.out.println("     You reach for the paper, but it slips beyond your reach and floats down the ditch.  " +
                 "It's gone.");
         return 2602;
     }
 
-    private int card2602() {
+    private static int card2602() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you enter the culvert, type \"culvert\" and press 'Enter'. \n" +
@@ -1272,7 +1272,7 @@ public class Main {
         }
     }
 
-    private int card2700(boolean lootable) {
+    private static int card2700(boolean lootable) {
         Scanner input = new Scanner(System.in);
         System.out.println("     You scramble up the ladder, through the hatch, and onto the guardhouse's decaying " +
                 "tile roof.  It seems to be on the verge of collapsing, but you find a spot that you are reasonably " +
@@ -1301,7 +1301,7 @@ public class Main {
         }
     }
 
-    private int card2701A() { // success; clue card 6
+    private static int card2701A() { // success; clue card 6
         System.out.println("     You reach and claim the first aid kit, which is fully stocked.  The area with the " +
                 "discarded pile of materials is quite sturdy, so you sit and make yourself comfortable while you " +
                 "sanitize, bandage, and wrap your various scrapes and maladies.  You feel refreshed and much better " +
@@ -1309,13 +1309,13 @@ public class Main {
         return 2702;
     }
 
-    private int card2701B() { // failure
+    private static int card2701B() { // failure
         System.out.println("     You make a single misstep.  You slip and tumble, sliding off of the roof into " +
                 "a ten-foot-fall and SPLASH!"); // original text
         return 2600;
     }
 
-    private int card2702() {
+    private static int card2702() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you cross to the greenhouse, type \"greenhouse\" and press 'Enter'. \n" +
@@ -1333,7 +1333,7 @@ public class Main {
         }
     }
 
-    private int card2800() {
+    private static int card2800() {
         Scanner input = new Scanner(System.in);
         System.out.println("     You creep through the darkness and find the cement walls end as natural stone and " +
                 "earth begin.  Occasional vents to the surface let in just barely enough light to see by.  Ahead " +
@@ -1360,7 +1360,7 @@ public class Main {
         }
     }
 
-    private int card2900() {
+    private static int card2900() {
         Scanner input = new Scanner(System.in);
         System.out.println("After crossing the precarious board, you find yourself at one end of a walkway that spans " +
                 "the length of the greenhouse roof.  From here you can see most of the mansion's vast grounds, which " +
@@ -1384,7 +1384,7 @@ public class Main {
         }
     }
 
-    private int card3000() {
+    private static int card3000() {
         Scanner input = new Scanner(System.in);
         System.out.println("     You appear in a driveway, which leads you to the mansion's entrance.  On the door is " +
                 "a plaque that reads MARSDEN and a large crystal doorknocker, which seems newer than everything else on " +
@@ -1410,7 +1410,7 @@ public class Main {
         }
     }
 
-    private int card3001() {
+    private static int card3001() {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you head to the statuary, type \"statuary\" and press 'Enter'. \n" +
@@ -1434,7 +1434,7 @@ public class Main {
         }
     }
 
-    private void card3100win() {
+    private static int card3100win() {
         System.out.println("    You made it!  You're inside the Marsden house, the edifice that has haunted your nightmares " +
                 "for weeks.  Your trek through the mansion's grounds has left you with far more questions than " +
                 "answers, to the point where you have to wonder if the smart move would be to turn around right " +
@@ -1447,23 +1447,24 @@ public class Main {
                 "Keep in mind that there many paths, variations, and alternate--less pleasant--endings to this " +
                 "experience.  Including this one, there are FIVE total endings.  If you enjoyed this game, " +
                 "consider playing again to see more of what it has to offer (Can you reach all the endings?)");
+        return 0;
     }
 
-    private void gameOver() { //original text below
+    private static void gameOver() { //original text below
         System.out.println(" It seems you've met with a terrible fate...\n" +
                 "\n" +
                 "Keep in mind that there are many different paths, variations, and alternate endings.  You didn't make " +
                 "it into the house this time, but if you enjoyed this game, maybe give it another try?");
     }
 
-    private void conclusion() { //original text below
+    private static void conclusion() { //original text below
         System.out.println("Thank you for playing House of Danger REDUX.  I hope that it was an interesting experience" +
                 "for you.  And please consider supporting the work that was adapted: 'Choose Your Own Adventure: House of " +
                 "Danger' A Cooperative Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.  All feedback " +
                 "is welcome on the House of Danger REDUX blog entry (located at: )");
     }
 
-    private int dieRoll() {
+    private static int dieRoll() {
         Random roller = new Random();
         int sixSideDie = 0;
 
@@ -1474,7 +1475,7 @@ public class Main {
         return sixSideDie;
     }
 
-    private int fightingModifier(boolean sabre, boolean pocketknife) {
+    private static int fightingModifier(boolean sabre, boolean pocketknife) {
         if (sabre) {
             return 2;
         } else if (pocketknife) {
@@ -1484,7 +1485,7 @@ public class Main {
         }
     }
 
-    private int perceptionModifier(boolean binoculars, boolean flashlight) {
+    private static int perceptionModifier(boolean binoculars, boolean flashlight) {
         if (binoculars) {
             return 2;
         } else if (flashlight) {
@@ -1494,7 +1495,7 @@ public class Main {
         }
     }
 
-    private int strengthModifier(boolean dowel, boolean shears) {
+    private static int strengthModifier(boolean dowel, boolean shears) {
         if (dowel) {
             return 2;
         } else if (shears) {
@@ -1504,7 +1505,7 @@ public class Main {
         }
     }
 
-    private void mainSwitch(){
+    private static void mainSwitch(){
         Stat psychic = new Stat(3);
         Stat danger = new Stat(1);
         Item pocketknife = new Item("Pocketknife");
@@ -1924,7 +1925,7 @@ public class Main {
                     break;
 
                 case 3100:
-                    card3100win();
+                    mover = card3100win();
                     break;
             }
         }
