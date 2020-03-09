@@ -1,5 +1,7 @@
 // 17 Feb 2020: project started
 // 28 Feb 2020: Version 1.0 completed and uploaded to https://github.com/sethblackburn
+// 09 Mar 2020: Version 1.1 Update - reformatted the main loop to use a switch instead of a long string of if-statements; 
+//              embedded loop and switch in its own method at the end of the Main class
 
 import java.util.Scanner;
 import java.util.Random;
