@@ -36,8 +36,7 @@ public class Stat {
     }
 
     public void decreaseStat(int decrease) {
-        this.value-=decrease;
-
+        this.value -= decrease;
         if (this.value < 1) {
             this.value = 1;
         }
@@ -51,7 +50,7 @@ public class Stat {
     }
 
     public void increaseDanger(int increase) {
-        this.value+=increase;
+        this.value += increase;
     }
 
     public void psyPenaltyCheck(int danger) {
