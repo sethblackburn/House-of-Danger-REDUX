@@ -1,7 +1,7 @@
 // 17 Feb 2020: project started
 // 28 Feb 2020: Version 1.0 completed and uploaded to https://github.com/sethblackburn
 // 09 Mar 2020: Version 1.1 Update - reformatted the main loop to use a switch instead of a long string of if-statements; embedded loop and switch in its own method
-// 10 Mar 2020: Version 1.2 Update - embedded blog link and fixed spacing for better presentation
+// 10 Mar 2020: Version 1.2 Update - embedded blog link; fixed spacing for better presentation; fixed typos
 
 import java.util.Scanner;
 import java.util.Random;
@@ -43,7 +43,7 @@ public class Main {
                 "\n" +
                 "     Chapter 1: The Grounds\n" +
                 "\n" +
-                "     It's a Tuesday morning in late June, and you wake up in a cold sweat. The nightmares came " +
+                "     It's a Tuesday morning in late June of 1981, and you wake up in a cold sweat. The nightmares came " +
                 "again last night.  Even though you are an aspiring detective and psychic investigator, you haven't" +
                 "been able to make sense of the haunting dreams you've had these last few weeks.  In your dreams you " +
                 "keep seeing the same spooky house.  You're still shivering under the covers when you hear the phone " +
@@ -63,7 +63,7 @@ public class Main {
                 "     \"And about that house in your dreams,\" a voice says from the hallway. \"I wonder if you're " +
                 "dreaming about the Marsden house out on Hedge Brook Road.\" Detective Murphy sticks his " +
                 "mustached face into the room. \n" +
-                "     \"Modern house, ornate gate . . . That sounds like the Marsden place, all right,\" says Sargeant " +
+                "     \"Modern house, ornate gate . . . That sounds like the Marsden place, all right,\" says Sergeant " +
                 "Morrison. \"Strange things are reported to happen out there.\" \n" +
                 "     Detective Murphy takes a puff on his pipe. \"That place is haunted,\" he says. \"I know it " +
                 "sounds unprofessional, but I've had a file on the Marsden house for years, and I'm sure of it.\"  " +
@@ -142,7 +142,7 @@ public class Main {
                 "reads: \n" +
                 "     'Henry Marsden, born 1839, died 1887.  General in the Union Army during the Civil War.  Severely " +
                 "wounded at the Battle of Shiloh in 1862.  Appointed warden of Hedge Brook Prison in 1880.' \n" +
-                "     To your left is the entrace to a hedge maze.  To your right is a graying picket fence with a rickety " +
+                "     To your left is the entrance to a hedge maze.  To your right is a graying picket fence with a rickety " +
                 "wooden gate.  You can see two stone angel statues and beyond them, a cemetery. \n");
         while (true) {
             System.out.println(" If you examine the statue more closely, type \"statue\" and press 'Enter'. \n" +
@@ -693,7 +693,7 @@ public class Main {
         if (map) {
             System.out.println("     The hedge maze is massive.  It's thick hedge walls are twice as tall as you but " +
                     "don't seem stable enough to climb.  Fortunately you have what appears to be a map, and the " +
-                    "directions are clear: first LEFT, then RIGHT, then LEFT again for easy path through.");
+                    "directions are clear: for an easy path through, first go LEFT, then go RIGHT, then go LEFT."); // contains original text
         } else {
             System.out.println("     The hedge maze is massive.  Its thick hedge walls are twice as tall as you but don't " +
                     "seem stable enough to climb, so you'll have to solve this labyrinth the old-fashioned way!  You take " +
@@ -769,7 +769,7 @@ public class Main {
     }
 
     private static int card120014() {
-        System.out.println(" You suddenly feel very lost.  You'd think you'd be better at this by now . . .  The sense of danger " +
+        System.out.println("     You suddenly feel very lost.  You'd think you'd be better at this by now . . .  The sense of danger " +
                 "and the dampening of your psychic senses press down on you as you feel stir-crazy for being in here " +
                 "for so long.\n"); // contains original text
         return 1800;
@@ -1067,8 +1067,8 @@ public class Main {
 
     private static int card2100() {
         Scanner input = new Scanner(System.in);
-        System.out.println("     Passing between a pair of stone angels, you enter an old family cemetary.  There is a " +
-                "marble mausoleum in the center of the cemetary.  A short set of stairs leads into its shadowy " +
+        System.out.println("     Passing between a pair of stone angels, you enter an old family cemetery.  There is a " +
+                "marble mausoleum in the center of the cemetery.  A short set of stairs leads into its shadowy " +
                 "interior.\n" +
                 "     Next to where you stand, a freshly dug grave yawns in the pale sunlight.  It's unsettling to think " +
                 "of climbing into it, but you see something shiny embedded in the dirt walls.\n");
@@ -1391,7 +1391,7 @@ public class Main {
                 "picking up now.  You try the doorknob and are surprised to find that the door is unlocked.\n" +
                 "     You've been lucky enough so far, but you wonder if you've missed something.  Before you enter the " +
                 "house, you look back.  You can see a few clear paths.  One leads toward a statuary, another to a small " +
-                "cemetary.  Two more paths stretch out toward a watery ditch with a gate and the house's luxurious " +
+                "cemetery.  Two more paths stretch out toward a watery ditch with a gate and the house's luxurious " +
                 "pool.  You could go back to explore if you want.\n");
         while (true) {
             System.out.println(" If you want to go back to explore, type \"explore\" and press 'Enter'. \n" +
@@ -1536,27 +1536,15 @@ public class Main {
 
         while (mover != 0) {
             switch (mover) {
-                case 100:
-                    mover = card100();
-                    pocketknife.obtainItem();
-                    break;
+                case 100: mover = card100(); pocketknife.obtainItem(); break;
 
-                case 200:
-                    mover = card200();
-                    break;
+                case 200: mover = card200(); break;
 
-                case 300:
-                    mover = card300();
-                    gameOver();
-                    break;
+                case 300: mover = card300(); gameOver(); break;
 
-                case 400:
-                    mover = card400();
-                    break;
+                case 400: mover = card400(); break;
 
-                case 401:
-                    mover = card401();
-                    break;
+                case 401: mover = card401(); break;
 
                 case 402:
                     int baseRoll402 = dieRoll();
@@ -1590,17 +1578,11 @@ public class Main {
                     }
                     break;
 
-                case 404:
-                    mover = card404(statueSwitch.getSwitchValue());
-                    break;
+                case 404: mover = card404(statueSwitch.getSwitchValue()); break;
 
-                case 500:
-                    mover = card500();
-                    break;
+                case 500: mover = card500(); break;
 
-                case 501:
-                    mover = card501();
-                    break;
+                case 501: mover = card501(); break;
 
                 case 502:
                     int baseRoll502 = dieRoll();
@@ -1634,21 +1616,13 @@ public class Main {
                     }
                     break;
 
-                case 504:
-                    mover = card504(lidSwitch.getSwitchValue());
-                    break;
+                case 504: mover = card504(lidSwitch.getSwitchValue()); break;
 
-                case 50024:
-                    mover = card50024();
-                    break;
+                case 50024: mover = card50024(); break;
 
-                case 600:
-                    mover = card600();
-                    break;
+                case 600: mover = card600(); break;
 
-                case 700:
-                    mover = card700();
-                    break;
+                case 700: mover = card700(); break;
 
                 case 701:
                     int baseRoll701 = dieRoll();
@@ -1665,17 +1639,11 @@ public class Main {
                     }
                     break;
 
-                case 702:
-                    mover = card702();
-                    break;
+                case 702: mover = card702(); break;
 
-                case 800:
-                    mover = card800();
-                    break;
+                case 800: mover = card800(); break;
 
-                case 900:
-                    mover = card900(psychic.getPsychicLevel());
-                    break;
+                case 900: mover = card900(psychic.getPsychicLevel()); break;
 
                 case 1000:
                     mover = card1000();
@@ -1695,13 +1663,9 @@ public class Main {
                     }
                     break;
 
-                case 1100:
-                    mover = card1100();
-                    break;
+                case 1100: mover = card1100(); break;
 
-                case 1200:
-                    mover = card1200(hedgeMazeMap.itemCheck());
-                    break;
+                case 1200: mover = card1200(hedgeMazeMap.itemCheck()); break;
 
                 case 120001:
                     danger.increaseDanger(2);
@@ -1710,9 +1674,7 @@ public class Main {
                     mover = card120001();
                     break;
 
-                case 120009:
-                    mover = card120009();
-                    break;
+                case 120009: mover = card120009(); break;
 
                 case 120011:
                     danger.increaseDanger(2);
@@ -1721,13 +1683,9 @@ public class Main {
                     mover = card120011();
                     break;
 
-                case 120012:
-                    mover = card120012();
-                    break;
+                case 120012: mover = card120012(); break;
 
-                case 120013:
-                    mover = card120013();
-                    break;
+                case 120013: mover = card120013(); break;
 
                 case 120014:
                     danger.increaseDanger(2);
@@ -1736,13 +1694,9 @@ public class Main {
                     mover = card120014();
                     break;
 
-                case 1300:
-                    mover = card1300();
-                    break;
+                case 1300: mover = card1300(); break;
 
-                case 1400:
-                    mover = card1400(cigarbox.getSwitchValue());
-                    break;
+                case 1400: mover = card1400(cigarbox.getSwitchValue()); break;
 
                 case 1401:
                     mover = card1401();
@@ -1750,36 +1704,19 @@ public class Main {
                     cigarbox.closeSwitch();
                     break;
 
-                case 1402:
-                    mover = card1402();
-                    break;
+                case 1402: mover = card1402(); break;
 
-                case 1500:
-                    mover = card1500(shearsInBush.getSwitchValue());
-                    break;
+                case 1500: mover = card1500(shearsInBush.getSwitchValue()); break;
 
-                case 1501:
-                    mover = card1501();
-                    shears.obtainItem();
-                    shearsInBush.closeSwitch();
-                    break;
+                case 1501: mover = card1501(); shears.obtainItem(); shearsInBush.closeSwitch(); break;
 
-                case 1502:
-                    mover = card1502();
-                    break;
+                case 1502: mover = card1502(); break;
 
-                case 1600:
-                    mover = card1600();
-                    gameOver();
-                    break;
+                case 1600: mover = card1600(); gameOver(); break;
 
-                case 1700:
-                    mover = card1700();
-                    break;
+                case 1700: mover = card1700(); break;
 
-                case 1800:
-                    mover = card1800(lockbox.getSwitchValue());
-                    break;
+                case 1800: mover = card1800(lockbox.getSwitchValue()); break;
 
                 case 1801:
                     mover = card1801();
@@ -1788,25 +1725,15 @@ public class Main {
                     psychic.increasePsychic(2);
                     break;
 
-                case 1802:
-                    mover = card1802();
-                    break;
+                case 1802: mover = card1802(); break;
 
-                case 1900:
-                    mover = card1900();
-                    break;
+                case 1900: mover = card1900(); break;
 
-                case 2000:
-                    mover = card2000();
-                    break;
+                case 2000: mover = card2000(); break;
 
-                case 2100:
-                    mover = card2100();
-                    break;
+                case 2100: mover = card2100(); break;
 
-                case 2200:
-                    mover = card2200();
-                    break;
+                case 2200: mover = card2200(); break;
 
                 case 220020:
                     int baseRoll220020 = dieRoll();
@@ -1824,9 +1751,7 @@ public class Main {
                     mover = card220020();
                     break;
 
-                case 2300:
-                    mover = card2300(challenge2300.getSwitchValue());
-                    break;
+                case 2300: mover = card2300(challenge2300.getSwitchValue()); break;
 
                 case 2301:
                     int baseRoll2301 = dieRoll();
@@ -1844,23 +1769,13 @@ public class Main {
                     }
                     break;
 
-                case 2304:
-                    mover = card2304();
-                    break;
+                case 2304: mover = card2304(); break;
 
-                case 2400:
-                    mover = card2400();
-                    gameOver();
-                    break;
+                case 2400: mover = card2400(); gameOver(); break;
 
-                case 2500:
-                    mover = card2500();
-                    gameOver();
-                    break;
+                case 2500: mover = card2500(); gameOver(); break;
 
-                case 2600:
-                    mover = card2600(challenge2600.getSwitchValue());
-                    break;
+                case 2600: mover = card2600(challenge2600.getSwitchValue()); break;
 
                 case 2601:
                     int baseRoll2601 = dieRoll();
@@ -1878,13 +1793,9 @@ public class Main {
                     }
                     break;
 
-                case 2602:
-                    mover = card2602();
-                    break;
+                case 2602: mover = card2602(); break;
 
-                case 2700:
-                    mover = card2700(challenge2700.getSwitchValue());
-                    break;
+                case 2700: mover = card2700(challenge2700.getSwitchValue()); break;
 
                 case 2701:
                     int roll2701 = dieRoll();
@@ -1900,21 +1811,13 @@ public class Main {
                     }
                     break;
 
-                case 2702:
-                    mover = card2702();
-                    break;
+                case 2702: mover = card2702(); break;
 
-                case 2800:
-                    mover = card2800();
-                    break;
+                case 2800: mover = card2800(); break;
 
-                case 2900:
-                    mover = card2900();
-                    break;
+                case 2900: mover = card2900(); break;
 
-                case 3000:
-                    mover = card3000();
-                    break;
+                case 3000: mover = card3000(); break;
 
                 case 3001:
                     danger.increaseDanger(2);
@@ -1923,9 +1826,7 @@ public class Main {
                     mover = card3001();
                     break;
 
-                case 3100:
-                    mover = card3100win();
-                    break;
+                case 3100: mover = card3100win(); break;
             }
         }
     }
