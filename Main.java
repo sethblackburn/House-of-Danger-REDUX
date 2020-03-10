@@ -1461,7 +1461,7 @@ public class Main {
         System.out.println("Thank you for playing House of Danger REDUX.  I hope that it was an interesting experience" +
                 "for you.  And please consider supporting the work that was adapted: 'Choose Your Own Adventure: House of " +
                 "Danger' A Cooperative Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.  All feedback " +
-                "is welcome on the House of Danger REDUX blog entry (located at: )");
+                "is welcome on the House of Danger REDUX blog entry (located at: https://wordpress.com/post/sethjamesblackburn.wordpress.com/271)");
     }
 
     private static int dieRoll() {
