@@ -2,6 +2,7 @@
 // 28 Feb 2020: Version 1.0 completed and uploaded to https://github.com/sethblackburn
 // 09 Mar 2020: Version 1.1 Update - reformatted the main loop to use a switch instead of a long string of if-statements;
 //              embedded loop and switch in its own method at the end of the Main class
+// 10 Mar 2020: Version 1.2 Update - embedded blog link and fixed spacing for better presentation
 
 import java.util.Scanner;
 import java.util.Random;
@@ -88,7 +89,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("climb")) {
                 return 700;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -106,8 +107,8 @@ public class Main {
                 "     Through the wall of the greenhouse, you spot a commotion of some kind of top of a gazebo just " +
                 "beyond the trees about forty feet away.  You need to think fast!\n");
         while (true) {
-            System.out.println("If you check out the writhing vines, type \"vines\" and press 'Enter'.\n" +
-                    "If you dash outside and explore the commotion at the gazebo, type \"gazebo\" and press 'Enter'.");
+            System.out.println(" If you check out the writhing vines, type \"vines\" and press 'Enter'.\n" +
+                    " If you dash outside and explore the commotion at the gazebo, type \"gazebo\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -116,7 +117,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("gazebo")) {
                 return 900;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -145,8 +146,8 @@ public class Main {
                 "     To your left is the entrace to a hedge maze.  To your right is a graying picket fence with a rickety " +
                 "wooden gate.  You can see two stone angel statues and beyond them, a cemetery. \n");
         while (true) {
-            System.out.println("If you examine the statue more closely, type \"statue\" and press 'Enter'. \n" +
-                    "If you move on from the statue, type \"move\" and press 'Enter'.");
+            System.out.println(" If you examine the statue more closely, type \"statue\" and press 'Enter'. \n" +
+                    " If you move on from the statue, type \"move\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -155,7 +156,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("move")) {
                 return 404;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -163,8 +164,8 @@ public class Main {
     private static int card401() {
         Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.println("If you search around the monument's base, type \"base\" and press 'Enter'. \n" +
-                    "If you climb the statue to examine the sabre, type \"climb\" and press 'Enter'.");
+            System.out.println( " If you search around the monument's base, type \"base\" and press 'Enter'. \n" +
+                     " If you climb the statue to examine the sabre, type \"climb\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -173,7 +174,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("climb")) {
                 return 403;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -184,8 +185,8 @@ public class Main {
                 "cement passage.\n");
         if (challenge403Switch) {
             while (true) {
-                System.out.println("If you want to climb statue to examine the sabre, type \"climb\" and press 'Enter'. \n" +
-                        "If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to climb statue to examine the sabre, type \"climb\" and press 'Enter'. \n" +
+                         " If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -194,7 +195,7 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 404;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
@@ -209,8 +210,8 @@ public class Main {
                 "sense that it might not be safe to hang around in one place for too long.\n"); // original text
         if (challenge403Switch) {
             while (true) {
-                System.out.println("If you want to climb statue to examine the sabre, type \"climb\" and press 'Enter'. \n" +
-                        "If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to climb statue to examine the sabre, type \"climb\" and press 'Enter'. \n" +
+                         " If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -219,7 +220,7 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 404;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
@@ -234,8 +235,8 @@ public class Main {
                 "you this is an important item.\n");
         if (challenge402Switch) {
             while (true) {
-                System.out.println("If you want to search the monument's base, type \"base\" and press 'Enter'. \n" +
-                        "If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to search the monument's base, type \"base\" and press 'Enter'. \n" +
+                         " If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -244,7 +245,7 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 404;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
@@ -259,8 +260,8 @@ public class Main {
                 "but the distraction of the pain is going to make later challenges more difficult.\n"); // original text
         if (challenge402Switch) {
             while (true) {
-                System.out.println("If you want to search the monument's base, type \"base\" and press 'Enter'. \n" +
-                        "If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to search the monument's base, type \"base\" and press 'Enter'. \n" +
+                         " If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -269,7 +270,7 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 404;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
@@ -283,11 +284,11 @@ public class Main {
         System.out.println("     Moving on from the statue, you need to decide which area to explore next.\n");
         while (true) {
             if (statueSwitch) {
-                System.out.println("If you want to see where the hidden passage leads, type \"passage\' and press " +
+                System.out.println( " If you want to see where the hidden passage leads, type \"passage\' and press " +
                         "'Enter'");
             }
-            System.out.println("If you enter the hedge maze, type \"maze\" and press 'Enter'.\n" +
-                    "If you move on from the statue, type \"cemetery\" and press 'Enter'.");
+            System.out.println( " If you enter the hedge maze, type \"maze\" and press 'Enter'.\n" +
+                     " If you move on from the statue, type \"cemetery\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -298,7 +299,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("cemetery")) {
                 return 2100;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -313,8 +314,8 @@ public class Main {
                 "the sarcophagus, and an elaborate tunnel has been dug into the ground beside the nearby wall.  You " +
                 "can see that the tunnel is lined with cement.\n");
         while (true) {
-            System.out.println("If you examine the sarcophagus more closely, type \"examine\" and press 'Enter'.\n" +
-                    "If you're ready to move on to a new place, type \"move\" and press 'Enter'.");
+            System.out.println( " If you examine the sarcophagus more closely, type \"examine\" and press 'Enter'.\n" +
+                     " If you're ready to move on to a new place, type \"move\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -323,7 +324,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("move")) {
                 return 504;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -331,8 +332,8 @@ public class Main {
     private static int card501() {
         Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.println("If you search around the sarcophagus, type \"around\" and press 'Enter'. \n" +
-                    "If you try to remove the stone lid from the sarcophagus, type \"lid\" and press 'Enter'.");
+            System.out.println( " If you search around the sarcophagus, type \"around\" and press 'Enter'. \n" +
+                     " If you try to remove the stone lid from the sarcophagus, type \"lid\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -341,7 +342,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("lid")) {
                 return 503;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -352,8 +353,8 @@ public class Main {
                 "psychic senses tell you this is an important item.\n");
         if (challenge503Switch) {
             while (true) {
-                System.out.println("If you want to try to open the sarcophagus, type \"lid\" and press 'Enter'. \n" +
-                        "If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to try to open the sarcophagus, type \"lid\" and press 'Enter'. \n" +
+                         " If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -362,7 +363,7 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 504;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
@@ -377,8 +378,8 @@ public class Main {
                 "for too long isn't safe.\n");
         if (challenge503Switch) {
             while (true) {
-                System.out.println("If you want to try to open the sarcophagus, type \"lid\" and press 'Enter'. \n" +
-                        "If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to try to open the sarcophagus, type \"lid\" and press 'Enter'. \n" +
+                         " If you're ready to move on to a new area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -387,7 +388,7 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 504;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
@@ -403,8 +404,8 @@ public class Main {
                 "mausoleum.\n");
         if (challenge502Switch) {
             while (true) {
-                System.out.println("If you want to search the area around the sarcophagus, type \"around\" and press 'Enter'.\n" +
-                        "If you're ready to move on, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to search the area around the sarcophagus, type \"around\" and press 'Enter'.\n" +
+                         " If you're ready to move on, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -413,7 +414,7 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 504;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
@@ -428,8 +429,8 @@ public class Main {
                 "your shoulder.  The pain in your shoulder is gonna make later challenges more difficult.\n"); // original text
         if (challenge502Switch) {
             while (true) {
-                System.out.println("If you want to search the area around the sarcophagus, type \"around\" and press 'Enter'.\n" +
-                        "If you're ready to move on, type \"move\" and press 'Enter'.");
+                System.out.println( " If you want to search the area around the sarcophagus, type \"around\" and press 'Enter'.\n" +
+                         " If you're ready to move on, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -438,11 +439,11 @@ public class Main {
                 } else if (choice.equalsIgnoreCase("move")) {
                     return 504;
                 } else {
-                    System.out.println("Command not recognized. Let's try again. \n");
+                    System.out.println(" Command not recognized. Let's try again. \n");
                 }
             }
         } else {
-            System.out.println("There doesn't seem to be anything else to do in this room.  It's time to move on.");
+            System.out.println(" There doesn't seem to be anything else to do in this room.  It's time to move on.");
             return 504;
         }
     }
@@ -452,11 +453,11 @@ public class Main {
         System.out.println("     Now ready to leave the mausoleum, where do you go next?\n");
         while (true) {
             if (lidSwitch) {
-                System.out.println("To take the secret passageway through the sarcophagus, type \"passageway\' and press " +
+                System.out.println(" To take the secret passageway through the sarcophagus, type \"passageway\' and press " +
                         "'Enter'");
             }
-            System.out.println("If you climb into the pit, type \"pit\" and press 'Enter'.\n" +
-                    "If you travel through the tunnel, type \"tunnel\" and press 'Enter'.");
+            System.out.println( " If you climb into the pit, type \"pit\" and press 'Enter'.\n" +
+                     " If you travel through the tunnel, type \"tunnel\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -467,7 +468,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("tunnel")) {
                 return 2800;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -502,8 +503,8 @@ public class Main {
                 "a haunting violin plays somewhere outside, while a wild and chaotic noise rises from a gazebo in the " +
                 "distance.\n");
         while (true) {
-            System.out.println("If you move in the direction of the violin, type \"violin\" and press 'Enter'.\n" +
-                    "If you check out the gazebo, type \"gazebo\" and press 'Enter'.");
+            System.out.println( " If you move in the direction of the violin, type \"violin\" and press 'Enter'.\n" +
+                     " If you check out the gazebo, type \"gazebo\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -512,7 +513,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("gazebo")) {
                 return 900;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -529,8 +530,8 @@ public class Main {
                 "guardhouse not far away.  If you can get past the creature, you might be able to hide there.  Or " +
                 "perhaps you should just turn and flee up the driveway toward the main house!\n");
         while (true) {
-            System.out.println("If you fight the creature, type \"fight\" and press 'Enter'.\n" +
-                    "If you run, type \"run\" and press 'Enter'.");
+            System.out.println( " If you fight the creature, type \"fight\" and press 'Enter'.\n" +
+                     " If you run, type \"run\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -539,7 +540,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("run")) {
                 return 702;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -564,8 +565,8 @@ public class Main {
     private static int card702() {
         Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.println("If you run into the guardhouse, type \"guardhouse\" and press 'Enter'.\n" +
-                    "If you run up the driveway, type \"driveway\" and press 'Enter'.");
+            System.out.println( " If you run into the guardhouse, type \"guardhouse\" and press 'Enter'.\n" +
+                     " If you run up the driveway, type \"driveway\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -574,7 +575,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("driveway")) {
                 return 800;
             } else {
-                System.out.println("Command not recognized. Let's try again.\n");
+                System.out.println(" Command not recognized. Let's try again.\n");
             }
         }
     }
@@ -589,8 +590,8 @@ public class Main {
                 "     Before you can catch your breath, a dark-windowed limousine roars around the bend--you only have a " +
                 "split second to decide which way to go to avoid being hit!\n");
         while (true) {
-            System.out.println("If you dash through the hedges, type \"hedges\" and press 'Enter'.\n" +
-                    "If you jump into the ditch, type \"ditch\" and press 'Enter'.");
+            System.out.println( " If you dash through the hedges, type \"hedges\" and press 'Enter'.\n" +
+                     " If you jump into the ditch, type \"ditch\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -599,7 +600,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("ditch")) {
                 return 2600;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -621,8 +622,8 @@ public class Main {
                     "memory before returning your attention to what's immediately around you.\n");
         }
         while (true) {
-            System.out.println("If you climb to the top of the gazebo, type \"climb\" and press 'Enter'. \n" +
-                    "If you run to the driveway, type \"driveway\" and press 'Enter'.");
+            System.out.println( " If you climb to the top of the gazebo, type \"climb\" and press 'Enter'. \n" +
+                     " If you run to the driveway, type \"driveway\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -631,7 +632,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("driveway")) {
                 return 3000;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -649,7 +650,7 @@ public class Main {
     }
 
     private static int card1001A() { // story card 10 clue card 22 clue card 7
-        System.out.println("You hold on to the top of the gazebo with one hand and time your lunge perfectly--you snag " +
+        System.out.println(" You hold on to the top of the gazebo with one hand and time your lunge perfectly--you snag " +
                 "a chunk of the whirling satellite dish.\n" +
                 "     The piece appears to be made by hand.  An engraving on it reads PLANET OF CRYSTALS.\n" +
                 "     Your psychic senses tell you this is an important item.  You look to your left and see a path " +
@@ -673,8 +674,8 @@ public class Main {
                 "disturbance erupt from the top of a gazebo in the distance.\n" +
                 "     And now you can hear a lone violin playing a soothing melody.\n");
         while (true) {
-            System.out.println("If you investigate the gazebo, type \"gazebo\" and press 'Enter'. \n" +
-                    "If you follow the sound of the violin, type \"sound\" and press 'Enter'.");
+            System.out.println( " If you investigate the gazebo, type \"gazebo\" and press 'Enter'. \n" +
+                     " If you follow the sound of the violin, type \"sound\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -683,7 +684,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("sound")) {
                 return 1700;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -700,7 +701,7 @@ public class Main {
                     "a deep breath to steady your nerves and head through the maze's entrance.\n");
         }
         while (true) {
-            System.out.println("Which direction will you go first? Type \"left\" or \"right\" and press 'Enter'.");
+            System.out.println(" Which direction will you go first? Type \"left\" or \"right\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -709,7 +710,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("right")) {
                 return 120001; // story card 12 clue card 1
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -725,7 +726,7 @@ public class Main {
         System.out.println("     You turn and follow a path deeper into the maze.  You feel like you're going in the " +
                 "right direction. \n");
         while (true) {
-            System.out.println("Which direction will you go now? Type \"left\" or \"right\" and press 'Enter'.");
+            System.out.println(" Which direction will you go now? Type \"left\" or \"right\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -734,22 +735,22 @@ public class Main {
             } else if (choice.equalsIgnoreCase("right")) {
                 return 120012; // story card 12 clue card 12
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
 
     private static int card120011() {
-        System.out.println("You keep going.  And going.  It seems like you've just walked in a circle!  Minutes stretch " +
+        System.out.println(" You keep going.  And going.  It seems like you've just walked in a circle!  Minutes stretch " +
                 "to upwards of an hour before you get your bearings and get back on track.  \n"); // contains original text
         return 120012;
     }
 
     private static int card120012() {
         Scanner input = new Scanner(System.in);
-        System.out.println("You feel like you might be getting close to the end of the maze!");
+        System.out.println(" You feel like you might be getting close to the end of the maze!\n");
         while (true) {
-            System.out.println("Which direction will you go now? Type \"left\" or \"right\" and press 'Enter'.");
+            System.out.println(" Which direction will you go now? Type \"left\" or \"right\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -758,18 +759,18 @@ public class Main {
             } else if (choice.equalsIgnoreCase("right")) {
                 return 120014; // story card 12 clue card 14
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
 
     private static int card120013() {
-        System.out.println("     Finally you see it . . . The end of the maze!");
+        System.out.println("     Finally you see it . . . The end of the maze!\n");
         return 1800;
     }
 
     private static int card120014() {
-        System.out.println("You suddenly feel very lost.  You'd think you'd be better at this by now . . .  The sense of danger " +
+        System.out.println(" You suddenly feel very lost.  You'd think you'd be better at this by now . . .  The sense of danger " +
                 "and the dampening of your psychic senses press down on you as you feel stir-crazy for being in here " +
                 "for so long.\n"); // contains original text
         return 1800;
@@ -787,7 +788,7 @@ public class Main {
                 "where topiary bushes have been trimmed into whimsical shapes.\n");
         while (true) {
             System.out.println(" If you inspect the statue of the man on the horse, type \"statue\" and press 'Enter'.\n" +
-                    "If you walk toward the topiary bushes, type \"bushes\" and press 'Enter'.");
+                     " If you walk toward the topiary bushes, type \"bushes\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -807,15 +808,15 @@ public class Main {
                 "to be the servants' quarters.  The door is slightly ajar, but you are unsure if anyone is inside.  ");
 
         if (box) {
-            System.out.println("In the courtyard there is a small table with a cigar box sitting on top of it.  ");
+            System.out.println(" In the courtyard there is a small table with a cigar box sitting on top of it.  ");
         }
 
-        System.out.println("There is also a path that leads out of the courtyard and up to the side of the mountain.  ");
+        System.out.println(" There is also a path that leads out of the courtyard and up to the side of the mountain.  \n");
 
         if (box) {
             while (true) {
                 System.out.println(" If you check out what's in the cigar box, type \"box\" and press 'Enter'. \n" +
-                        "If you want to move on from this area, type \"move\" and press 'Enter'.");
+                         " If you want to move on from this area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -833,7 +834,7 @@ public class Main {
     }
 
     private static int card1401() {
-        System.out.println("     The cigar box contains a flashlight.  You keep this item.  It's now time to move on. ");
+        System.out.println("     The cigar box contains a flashlight.  You keep this item.  It's now time to move on. \n");
         return 1402;
     }
 
@@ -841,7 +842,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you approach the door to the servants' quarters, type \"door\" and press 'Enter'. \n" +
-                    "If you run to the side of the mansion, type \"side\" and press 'Enter'.");
+                     " If you run to the side of the mansion, type \"side\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -850,7 +851,7 @@ public class Main {
             } else if (choice.equalsIgnoreCase("side")) {
                 return 2000;
             } else {
-                System.out.println("Command not recognized. Let's try again. \n");
+                System.out.println(" Command not recognized. Let's try again. \n");
             }
         }
     }
@@ -867,12 +868,12 @@ public class Main {
 
         System.out.println("     A brick path winds through the shrubs and splits into two paths in the distance.  One " +
                 "of the leads towards a rickety wooden gate flanked by a pair of stone angel statues.  The other path " +
-                "leads into an open field, across which you can see the front door of the Marsden manor.  ");
+                "leads into an open field, across which you can see the front door of the Marsden manor.  \n");
 
         if (shears) {
             while (true) {
                 System.out.println(" To pull the handle out of the bush, type \"bush\" and press 'Enter'. \n" +
-                        "If you want to move on from this area, type \"move\" and press 'Enter'.");
+                         " If you want to move on from this area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -891,7 +892,7 @@ public class Main {
 
     private static int card1501() {
         System.out.println("     You pull a pair of garden shears from the shrub.  They could help you pry " +
-                "something open.  You keep this item.  It's now time to move on. ");
+                "something open.  You keep this item.  It's now time to move on. \n");
         return 1502;
     }
 
@@ -899,7 +900,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you walk through the wooden gate, type \"gate\" and press 'Enter'. \n" +
-                    "If you head across the field toward the manor's front door, type \"field\" and press 'Enter'.");
+                     " If you head across the field toward the manor's front door, type \"field\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -932,10 +933,10 @@ public class Main {
                 "horse stable with an open gate.  Inside, sitting on a stool, is the source of the violin music: a " +
                 "chimpanzee playing his heart out, a soulful expression on his face.\n" +
                 "     The chimp is fully committed to the music.  You have never heard such an emotional performance.\n" +
-                "     It's . . . it's beautiful.");
+                "     It's . . . it's beautiful.\n");
         while (true) {
             System.out.println(" If you leave the stable and run to the driveway, type \"driveway\" and press 'Enter'. \n" +
-                    "If you tiptoe through the gate to experience the full power of the performance, type \"music\" and press 'Enter'.");
+                     " If you tiptoe through the gate to experience the full power of the performance, type \"music\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -960,12 +961,12 @@ public class Main {
         }
 
         System.out.println("     Looking toward the pool house, you see its door is barely hanging from its hinges.  " +
-                "There is also a gate that leads--you assume--directly to the pool.");
+                "There is also a gate that leads--you assume--directly to the pool.\n");
 
         if (lockbox) {
             while (true) {
                 System.out.println(" To see if the lockbox is open, type \"box\" and press 'Enter'. \n" +
-                        "If you want to move on from this area, type \"move\" and press 'Enter'.");
+                         " If you want to move on from this area, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -992,7 +993,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you explore the pool house, type \"house\" and press 'Enter'.  " +
-                    "If you walk through the gate to check out the pool, type \"gate\" and press 'Enter'. ");
+                     " If you walk through the gate to check out the pool, type \"gate\" and press 'Enter'. ");
 
             String choice = input.next();
 
@@ -1022,10 +1023,10 @@ public class Main {
                 "\n" +
                 "     'Not a popular guy,' you think.\n" +
                 "     A wooden ladder leads up to a hatch in the roof.  Through a window filled with cobwebs you can " +
-                "see an open field that leads to the manor's front door.  You consider what to do next.");
+                "see an open field that leads to the manor's front door.  You consider what to do next.\n");
         while (true) {
             System.out.println(" If you climb the ladder to the hatch in the roof, type \"roof\" and press 'Enter'. \n" +
-                    "If you crawl through the window and run for the front door of the house, type \"field\" and press 'Enter'.");
+                     " If you crawl through the window and run for the front door of the house, type \"field\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1048,10 +1049,10 @@ public class Main {
                 "expert skill and confidence.\n" +
                 "     There is a clearing up ahead, though you are unsure of what lies at its end.  And the space you " +
                 "are in has become so tight, it would be easier to climb over the fence to check out the violinist " +
-                "playing that amazing melody.");
+                "playing that amazing melody.\n");
         while (true) {
             System.out.println(" If you run toward the clearing, type \"clearing\" and press 'Enter'. \n" +
-                    "If you climb over the fence to follow the violin melody, type \"melody\" and press 'Enter'.");
+                     " If you climb over the fence to follow the violin melody, type \"melody\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1070,12 +1071,11 @@ public class Main {
         System.out.println("     Passing between a pair of stone angels, you enter an old family cemetary.  There is a " +
                 "marble mausoleum in the center of the cemetary.  A short set of stairs leads into its shadowy " +
                 "interior.\n" +
-                "\n" +
                 "     Next to where you stand, a freshly dug grave yawns in the pale sunlight.  It's unsettling to think " +
-                "of climbing into it, but you see something shiny embedded in the dirt walls.");
+                "of climbing into it, but you see something shiny embedded in the dirt walls.\n");
         while (true) {
             System.out.println(" If you enter the mausoleum, type \"mausoleum\" and press 'Enter'. \n" +
-                    "If you climb into the open grave, type \"grave\" and press 'Enter'.");
+                     " If you climb into the open grave, type \"grave\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1118,11 +1118,11 @@ public class Main {
                 "     Out of nowhere, you hear a commotion.  You look around and wonder if it's coming from inside the " +
                 "pool house nearby.  Then you see movement on top of a gazebo in the distance.  Someone--or something--" +
                 "is engaged in a struggle up there.  Maybe they need your help!  Then again, if you offer assistance " +
-                "you might end up needing help yourself!");
+                "you might end up needing help yourself!\n");
         if (challengeSwitch) {
             while (true) {
                 System.out.println(" If you investigate the ripples in the pool, type \"pool\" and press 'Enter'. \n" +
-                        "If you want to move on, type \"move\" and press 'Enter'.");
+                         " If you want to move on, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -1154,10 +1154,10 @@ public class Main {
         System.out.println("     While moving through the water you lose your equilibrium and your head goes under " +
                 "unexpectedly.  You inhale a small amount of water, prompting a fierce, painful coughing fit and a " +
                 "mild wave of nausea as the slimy water goes in and then forcibly back out of your mouth.  You're okay, " +
-                "but slightly worse for the wear."); // original text
+                "but slightly worse for the wear.\n"); // original text
         while (true) {
             System.out.println(" If you try to investigate the ripples in the pool again, type \"pool\" and press 'Enter'. \n" +
-                    "If you want to move on, type \"move\" and press 'Enter'.");
+                     " If you want to move on, type \"move\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1175,7 +1175,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you go to the pool house, type \"house\" and press 'Enter'. \n" +
-                    "If you go straight to the action at the gazebo, type \"gazebo\" and press 'Enter'.");
+                     " If you go straight to the action at the gazebo, type \"gazebo\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1222,10 +1222,10 @@ public class Main {
                 "hedge maze.\n");
         if (paper) {
             System.out.println("     You then see a small piece of paper drifting by you in the water.  You might be " +
-                    "able to grab it if you act fast.");
+                    "able to grab it if you act fast.\n");
             while (true) {
                 System.out.println(" If you try to grab the paper, type \"paper\" and press 'Enter'. \n" +
-                        "If you ignore the paper and want to move on, type \"move\" and press 'Enter'.");
+                         " If you ignore the paper and want to move on, type \"move\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -1258,7 +1258,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you enter the culvert, type \"culvert\" and press 'Enter'. \n" +
-                    "If you enter the hedge maze, type \"maze\" and press 'Enter'.");
+                     " If you enter the hedge maze, type \"maze\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1281,10 +1281,10 @@ public class Main {
             System.out.println("     Across the dangerously unstable roof from where you crouch uneasily, you can see a pile of " +
                     "construction materials, probably left over by contractors working on the roof.  Among the material is " +
                     "first aid kit, but navigating the length of the roof to reach it will be perilous.  One wrong step " +
-                    "and you could stumble off the roof, into a ditch you see below.");
+                    "and you could stumble off the roof, into a ditch you see below.\n");
             while (true) {
                 System.out.println(" If you try to reach the first aid kit, type \"kit\" and press 'Enter'. \n" +
-                        "If you decide leave it, type \"leave\" and press 'Enter'.");
+                         " If you decide leave it, type \"leave\" and press 'Enter'.");
 
                 String choice = input.next();
 
@@ -1319,7 +1319,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you cross to the greenhouse, type \"greenhouse\" and press 'Enter'. \n" +
-                    "If you climb down the vine, type \"vine\" and press 'Enter'.");
+                     " If you climb down the vine, type \"vine\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1343,10 +1343,10 @@ public class Main {
                 "far it goes.\n" +
                 "     Another tunnel looks partially caved in.  Tiny clumps of earth periodically fall from the ceiling " +
                 "as you approach this tunnel, and several of the supports that hold the walls up have gaping cracks " +
-                "in them. ");
+                "in them. \n");
         while (true) {
             System.out.println(" If you dive into the water-filled tunnel, type \"water\" and press 'Enter'. \n" +
-                    "If you explore the partially collapsed tunnel, type \"collapsed\" and press 'Enter'.");
+                     " If you explore the partially collapsed tunnel, type \"collapsed\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1362,15 +1362,15 @@ public class Main {
 
     private static int card2900() {
         Scanner input = new Scanner(System.in);
-        System.out.println("After crossing the precarious board, you find yourself at one end of a walkway that spans " +
+        System.out.println("     After crossing the precarious board, you find yourself at one end of a walkway that spans " +
                 "the length of the greenhouse roof.  From here you can see most of the mansion's vast grounds, which " +
                 "are a little out of place amid the surrounding suburban neighborhood.  The air is full of mosquitoes " +
                 "and other buzzing insects.  The clouds you saw on the horizon earlier seem to be closer now.  You see " +
                 "that there's an open access door in the roof that would allow you to descend into the greenhouse.  You " +
-                "can also drop down onto a path, which appears to lead to the side of the mansion itself.");
+                "can also drop down onto a path, which appears to lead to the side of the mansion itself.\n");
         while (true) {
             System.out.println(" If you wriggle through the access door to enter the greenhouse, type \"door\" and press 'Enter'. \n" +
-                    "If you drop onto the path and run to the side of the house, type \"path\" and press 'Enter'.");
+                     " If you drop onto the path and run to the side of the house, type \"path\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1393,10 +1393,10 @@ public class Main {
                 "     You've been lucky enough so far, but you wonder if you've missed something.  Before you enter the " +
                 "house, you look back.  You can see a few clear paths.  One leads toward a statuary, another to a small " +
                 "cemetary.  Two more paths stretch out toward a watery ditch with a gate and the house's luxurious " +
-                "pool.  You could go back to explore if you want.");
+                "pool.  You could go back to explore if you want.\n");
         while (true) {
             System.out.println(" If you want to go back to explore, type \"explore\" and press 'Enter'. \n" +
-                    "If you're ready to enter the house, type \"house\" and press 'Enter'.");
+                     " If you're ready to enter the house, type \"house\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1414,9 +1414,9 @@ public class Main {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println(" If you head to the statuary, type \"statuary\" and press 'Enter'. \n" +
-                    "If you head to the cemetery, type \"cemetery\" and press 'Enter'.\n" +
-                    "If you head to the ditch, type \"ditch\" and press 'Enter'.\n" +
-                    "If you head to the pool, type \"pool\" and press 'Enter'.");
+                     " If you head to the cemetery, type \"cemetery\" and press 'Enter'.\n" +
+                     " If you head to the ditch, type \"ditch\" and press 'Enter'.\n" +
+                     " If you head to the pool, type \"pool\" and press 'Enter'.");
 
             String choice = input.next();
 
@@ -1453,15 +1453,15 @@ public class Main {
     private static void gameOver() { //original text below
         System.out.println(" It seems you've met with a terrible fate...\n" +
                 "\n" +
-                "Keep in mind that there are many different paths, variations, and alternate endings.  You didn't make " +
+                " Keep in mind that there are many different paths, variations, and alternate endings.  You didn't make " +
                 "it into the house this time, but if you enjoyed this game, maybe give it another try?");
     }
 
     private static void conclusion() { //original text below
-        System.out.println("Thank you for playing House of Danger REDUX.  I hope that it was an interesting experience" +
+        System.out.println(" Thank you for playing House of Danger REDUX.  I hope that it was an interesting experience" +
                 "for you.  And please consider supporting the work that was adapted: 'Choose Your Own Adventure: House of " +
                 "Danger' A Cooperative Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.  All feedback " +
-                "is welcome on the House of Danger REDUX blog entry (located at: https://wordpress.com/post/sethjamesblackburn.wordpress.com/271)");
+                "is welcome on the House of Danger REDUX blog entry (https://wordpress.com/post/sethjamesblackburn.wordpress.com/271)");
     }
 
     private static int dieRoll() {
