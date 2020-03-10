@@ -15,7 +15,7 @@ public class Main {
     }
 
     private static void introduction() {
-        System.out.println("\n Welcome to House of Danger REDUX - Version 1.1!\n" +
+        System.out.println("\n Welcome to House of Danger REDUX - Version 1.2!\n" +
                 "\n" +
                 " LEGAL DISCLAIMER:\n" +
                 "\n" +
