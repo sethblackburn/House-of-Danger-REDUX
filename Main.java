@@ -2,6 +2,7 @@
 // 28 Feb 2020: Version 1.0 completed and uploaded to https://github.com/sethblackburn
 // 09 Mar 2020: Version 1.1 Update - reformatted the main loop to use a switch instead of a long string of if-statements; embedded loop and switch in its own method
 // 10 Mar 2020: Version 1.2 Update - embedded blog link; fixed spacing for better presentation; fixed typos
+// 25 Aug 2020: Version 1.3 Update - fixed broken blog link
 
 import java.util.Scanner;
 import java.util.Random;
@@ -14,7 +15,7 @@ public class Main {
     }
 
     private static void introduction() {
-        System.out.println("\n Welcome to House of Danger REDUX - Version 1.2!\n" +
+        System.out.println("\n Welcome to House of Danger REDUX - Version 1.3!\n" +
                 "\n" +
                 " LEGAL DISCLAIMER:\n" +
                 "\n" +
@@ -1460,7 +1461,7 @@ public class Main {
         System.out.println(" Thank you for playing House of Danger REDUX.  I hope that it was an interesting experience" +
                 "for you.  And please consider supporting the work that was adapted: 'Choose Your Own Adventure: House of " +
                 "Danger' A Cooperative Adventure Game by Prospero Hall and published by  Z-MAN Games, Inc.  All feedback " +
-                "is welcome on the House of Danger REDUX blog entry (https://wordpress.com/post/sethjamesblackburn.wordpress.com/271)");
+                "is welcome on the House of Danger REDUX blog entry (https://sethjamesblackburn.wordpress.com/2020/03/10/house-of-danger-redux-faq-comments-blog/)");
     }
 
     private static int dieRoll() {
